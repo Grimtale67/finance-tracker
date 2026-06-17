@@ -11,6 +11,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(express.static('public'))
 
+// 🔥 TAMBAH INI
+app.get('/', (req, res) => {
+  res.redirect('/login.html')
+})
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected!'))
